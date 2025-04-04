@@ -1,16 +1,48 @@
 // ScrollRouter.jsx
 import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Main from "./Main";
+import Navbar from "./Navbar";
 
 const ScrollRouter = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const mainRef = useRef<HTMLElement | null>(null); // 타입 명시
   const aboutMeRef = useRef<HTMLElement | null>(null);
   const projectRef = useRef<HTMLElement | null>(null);
   const experienceRef = useRef<HTMLElement | null>(null);
   const contactRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            if (location.pathname !== `/${id}`) {
+              navigate(`/${id}`, { replace: true });
+            }
+          }
+        }
+      },
+      {
+        threshold: 0.6, // 어느 정도 보여야 "보이는 중"이라고 판단할지
+      }
+    );
+
+    const sections = [
+      mainRef.current,
+      aboutMeRef.current,
+      projectRef.current,
+      experienceRef.current,
+      contactRef.current,
+    ];
+
+    sections.forEach((sec) => sec && observer.observe(sec));
+
+    return () => observer.disconnect();
+  }, [navigate, location.pathname]);
 
   useEffect(() => {
     const scrollToSection = () => {
@@ -40,34 +72,22 @@ const ScrollRouter = () => {
 
   return (
     <div>
-      <section
-        ref={mainRef}
-        style={{ height: "100vh", background: "lightblue" }}
-      >
+      {location.pathname !== "/" && location.pathname !== "/contact" && (
+        <Navbar />
+      )}
+      <section ref={mainRef} id="" style={{ height: "100vh" }}>
         <Main />
       </section>
-      <section
-        ref={aboutMeRef}
-        style={{ height: "100vh", background: "lightgreen" }}
-      >
+      <section ref={aboutMeRef} id="aboutMe" style={{ height: "100vh" }}>
         About Section
       </section>
-      <section
-        ref={projectRef}
-        style={{ height: "100vh", background: "lightgreen" }}
-      >
+      <section ref={projectRef} id="project" style={{ height: "100vh" }}>
         Project Section
       </section>
-      <section
-        ref={experienceRef}
-        style={{ height: "100vh", background: "lightgreen" }}
-      >
+      <section ref={experienceRef} id="experience" style={{ height: "100vh" }}>
         Experience Section
       </section>
-      <section
-        ref={contactRef}
-        style={{ height: "100vh", background: "lightcoral" }}
-      >
+      <section ref={contactRef} id="contact" style={{ height: "100vh" }}>
         Contact Section
       </section>
     </div>
