@@ -10,6 +10,7 @@ export default {
       colors: {
         background: "#403D39",
         content: "#FFFCF2",
+        card: "#CCC5B9",
       },
       boxShadow: {
         custom: "-20px 30px 10px 5px rgba(0, 0, 0, 0.25)",
