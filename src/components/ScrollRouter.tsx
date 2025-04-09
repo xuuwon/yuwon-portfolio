@@ -3,6 +3,8 @@ import { useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Main from "./Main";
 import Navbar from "./Navbar";
+import AboutMe from "./AboutMe";
+import Projects from "./Projects";
 
 const ScrollRouter = () => {
   const location = useLocation();
@@ -79,10 +81,10 @@ const ScrollRouter = () => {
         <Main />
       </section>
       <section ref={aboutMeRef} id="aboutMe" style={{ height: "100vh" }}>
-        About Section
+        <AboutMe />
       </section>
       <section ref={projectRef} id="project" style={{ height: "100vh" }}>
-        Project Section
+        <Projects />
       </section>
       <section ref={experienceRef} id="experience" style={{ height: "100vh" }}>
         Experience Section
