@@ -1,13 +1,16 @@
-import { ScrollAnimation } from "@lasbe/react-scroll-animation";
+import { motion } from "framer-motion";
 
 const AboutMe = () => {
   return (
-    <ScrollAnimation
-      startingPoint="bottom"
-      duration={2}
-      amount="sm"
-      delay={0.3}
-      repeat
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{
+        ease: "easeInOut",
+        duration: 2,
+        delay: 0.5,
+      }}
     >
       <section className="w-[1150px] mx-auto flex justify-end py-10">
         <section className="w-[870px] text-lg text-content flex flex-col gap-6">
@@ -102,7 +105,7 @@ const AboutMe = () => {
           </section>
         </section>
       </section>
-    </ScrollAnimation>
+    </motion.div>
   );
 };
 

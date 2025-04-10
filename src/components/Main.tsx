@@ -1,15 +1,18 @@
-import { ScrollAnimation } from "@lasbe/react-scroll-animation";
+import { motion } from "framer-motion";
 
 const Main = () => {
   return (
     <section className="flex items-center justify-center min-h-screen bg-background">
       {/* 주요 블록 */}
-      <ScrollAnimation
-        startingPoint="bottom"
-        duration={2}
-        amount="sm"
-        delay={0.5}
-        repeat
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{
+          ease: "easeInOut",
+          duration: 2,
+          delay: 0.5,
+        }}
       >
         <article className="w-[1150px] h-[570px] bg-content shadow-custom p-9 flex flex-col justify-between">
           {/* 독립적인 콘텐츠 영역 */}
@@ -30,7 +33,7 @@ const Main = () => {
             </p>
           </footer>
         </article>
-      </ScrollAnimation>
+      </motion.div>
     </section>
   );
 };
