@@ -11,7 +11,7 @@ const Main = () => {
         transition={{
           ease: "easeInOut",
           duration: 2,
-          delay: 0.5,
+          delay: 0.2,
         }}
       >
         <article className="w-[1150px] h-[570px] bg-content shadow-custom p-9 flex flex-col justify-between">
