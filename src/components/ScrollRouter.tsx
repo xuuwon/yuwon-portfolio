@@ -10,7 +10,10 @@ const ScrollRouter = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const mainRef = useRef<HTMLElement | null>(null); // 타입 명시
+  const isScrollingRef = useRef(false); // ⭐️ 추가
+  const scrollTimeoutRef = useRef<number | null>(null); // ⭐️ 추가
+
+  const mainRef = useRef<HTMLElement | null>(null);
   const aboutMeRef = useRef<HTMLElement | null>(null);
   const projectRef = useRef<HTMLElement | null>(null);
   const experienceRef = useRef<HTMLElement | null>(null);
@@ -19,6 +22,7 @@ const ScrollRouter = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        if (isScrollingRef.current) return; // ⭐️ 스크롤 중엔 무시
         for (const entry of entries) {
           if (entry.isIntersecting) {
             const id = entry.target.id;
@@ -29,7 +33,7 @@ const ScrollRouter = () => {
         }
       },
       {
-        threshold: 0.6, // 어느 정도 보여야 "보이는 중"이라고 판단할지
+        threshold: 0.6,
       }
     );
 
@@ -42,11 +46,16 @@ const ScrollRouter = () => {
     ];
 
     sections.forEach((sec) => sec && observer.observe(sec));
-
     return () => observer.disconnect();
   }, [navigate, location.pathname]);
 
   useEffect(() => {
+    isScrollingRef.current = true; // ⭐️ 스크롤 시작
+    if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    scrollTimeoutRef.current = setTimeout(() => {
+      isScrollingRef.current = false; // ⭐️ 일정 시간 후 다시 활성화
+    }, 1000);
+
     const scrollToSection = () => {
       switch (location.pathname) {
         case "/":
