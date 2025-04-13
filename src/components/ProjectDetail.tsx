@@ -97,7 +97,7 @@ const ProjectDetail = () => {
             <section className="flex gap-2">
               {project?.technology.map((tech) => {
                 return (
-                  <span className="px-2 py-1 text-base border border-content rounded-xl">
+                  <span className="px-2 py-1 text-base bg-content text-background rounded-xl">
                     {tech}
                   </span>
                 );
@@ -119,21 +119,21 @@ const ProjectDetail = () => {
           <p>📒 KPT 회고 📒</p>
 
           <section className="flex items-center gap-3">
-            <p className="px-2 py-1 text-base border border-content rounded-xl">
+            <p className="px-2 py-1 text-base bg-content text-background rounded-xl">
               KEEP
             </p>
             <p className="text-base">{project?.keep}</p>
           </section>
 
           <section className="flex items-center gap-3 ">
-            <p className="px-2 py-1 text-base border border-content rounded-xl">
+            <p className="px-2 py-1 text-base bg-content text-background rounded-xl">
               PROBLEM
             </p>
             <p className="text-base">{project?.problem}</p>
           </section>
 
           <section className="flex items-center gap-3">
-            <p className="px-2 py-1 text-base border border-content rounded-xl">
+            <p className="px-2 py-1 text-base bg-content text-background rounded-xl">
               TRY
             </p>
             <p className="text-base">{project?.try}</p>
