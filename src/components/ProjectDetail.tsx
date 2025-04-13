@@ -51,6 +51,36 @@ const ProjectDetail = () => {
         <section className={sectionStyle}>
           <p>{project?.title}</p>
           <p className="text-base">{project?.description}</p>
+
+          <section className="flex gap-2">
+            {project?.github && (
+              <a
+                href={project?.github}
+                target="_blank"
+                className="px-2 py-1 text-base border cursor-pointer border-content rounded-xl hover:bg-content hover:text-background"
+              >
+                Github Link
+              </a>
+            )}
+            {project?.presentation && (
+              <a
+                href={project?.presentation}
+                target="_blank"
+                className="px-2 py-1 text-base border cursor-pointer border-content rounded-xl hover:bg-content hover:text-background"
+              >
+                PPT Link
+              </a>
+            )}
+            {project?.projectLink && (
+              <a
+                href={project?.projectLink}
+                target="_blank"
+                className="px-2 py-1 text-base border cursor-pointer border-content rounded-xl hover:bg-content hover:text-background"
+              >
+                Project Link
+              </a>
+            )}
+          </section>
         </section>
 
         <hr className="w-[1150px] h-0.5 bg-content" />
