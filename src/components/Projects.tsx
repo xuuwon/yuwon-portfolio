@@ -19,6 +19,8 @@ const Projects = () => {
           {projectData.map((project) => {
             return (
               <ProjectCard
+                key={project.id}
+                id={project.id}
                 team={project.team}
                 type={project.type}
                 title={project.title}
