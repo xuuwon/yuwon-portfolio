@@ -21,9 +21,13 @@ export const projectData: ProjectCardProps[] = [
 export const projectDetailData: ProjectDetailProps[] = [
   {
     id: 1,
-    title: "도르멍 - 제주의 하루를 선물해 드립니다.",
+    title: "도르멍 - 제주의 하루를 선물해 드립니다.🌴",
     description:
       "제주 여행을 계획하고, 일정을 저장하며, 여행을 마친 후엔 추억까지 기록할 수 있는 도르멍 서비스입니다.",
+    github: "https://github.com/Doreumung",
+    projectLink: "https://www.doreumung.site/",
+    presentation:
+      "https://drive.google.com/file/d/139-djdk4eunpN40hmEiE7JeyeOvY7hT9/view?usp=drive_link",
     image: "/jeju.jpg",
     team: "프론트엔드 3명 / 백엔드 2명",
     period: "2024.02 ~ 2024.03 (4주)",

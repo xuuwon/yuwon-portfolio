@@ -10,6 +10,9 @@ export type ProjectDetailProps = {
   id: number;
   title: string;
   description: string;
+  github?: string;
+  presentation?: string;
+  projectLink?: string;
   image: string;
   team: string;
   period: string;
