@@ -21,14 +21,14 @@ const AboutMe = () => {
                 <p className="text-2xl">조유원</p>
                 <div className="flex gap-2 text-sm text-background">
                   <a
-                    className="p-1.5 bg-content rounded-2xl"
+                    className="p-1.5 border border-content text-content rounded-2xl hover:bg-content hover:text-background"
                     href="https://github.com/xuuwon"
                     target="_blank"
                   >
                     GITHUB
                   </a>
                   <a
-                    className="p-1.5 bg-content rounded-2xl"
+                    className="p-1.5 border border-content text-content rounded-2xl hover:bg-content hover:text-background"
                     href="https://xuwon.tistory.com/"
                     target="_blank"
                   >
