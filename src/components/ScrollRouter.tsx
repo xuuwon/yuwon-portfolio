@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import AboutMe from "./AboutMe";
 import Projects from "./Projects";
 import Experience from "./Experience";
+import Contact from "./Contact";
 
 const ScrollRouter = () => {
   const location = useLocation();
@@ -100,7 +101,7 @@ const ScrollRouter = () => {
         <Experience />
       </section>
       <section ref={contactRef} id="contact" style={{ height: "100vh" }}>
-        Contact Section
+        <Contact />
       </section>
     </div>
   );
