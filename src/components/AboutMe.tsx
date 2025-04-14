@@ -15,7 +15,7 @@ const AboutMe = () => {
       <section className="w-[1150px] mx-auto flex justify-end py-16">
         <section className="w-[870px] text-lg text-content flex flex-col gap-4">
           <section className="flex gap-3">
-            <img src="/public/photo.jpg" className="w-[150px] rounded-3xl" />
+            <img src="/photo.jpg" className="w-[150px] rounded-3xl" />
             <div className="flex flex-col gap-3 p-3">
               <div className="flex gap-3">
                 <p className="text-2xl">조유원</p>
