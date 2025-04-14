@@ -23,3 +23,11 @@ export type ProjectDetailProps = {
   problem: string;
   try: string;
 };
+
+export type ExperienceCardProps = {
+  title: string;
+  type: string[];
+  period: string;
+  intro: string;
+  image: string;
+};
