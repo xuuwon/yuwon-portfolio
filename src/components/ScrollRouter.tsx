@@ -56,7 +56,7 @@ const ScrollRouter = () => {
     if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
     scrollTimeoutRef.current = setTimeout(() => {
       isScrollingRef.current = false; // ⭐️ 일정 시간 후 다시 활성화
-    }, 1000);
+    }, 200);
 
     const scrollToSection = () => {
       switch (location.pathname) {
