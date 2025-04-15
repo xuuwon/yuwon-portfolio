@@ -33,7 +33,7 @@ const ProjectDetail = () => {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.6 }}
+      viewport={{ once: true }}
       transition={{
         ease: "easeInOut",
         duration: 1,
@@ -42,7 +42,7 @@ const ProjectDetail = () => {
       <section className="relative w-[1150px] mx-auto flex flex-col items-center py-16  text-content text-xl gap-8">
         <button
           className="absolute left-0 flex items-center gap-2 text-base top-16"
-          onClick={() => navigate("/project")}
+          onClick={() => navigate(-1)} // 이전 페이지로
         >
           <ArrowBackIcon /> 이전
         </button>
@@ -109,7 +109,7 @@ const ProjectDetail = () => {
           <section className="flex flex-col items-center gap-3">
             {project?.keypoint.map((key, idx) => {
               return (
-                <div className="flex gap-2">
+                <div className="flex gap-2" key={idx}>
                   <p>{indexArr[idx]}</p>
                   <p className="text-base">{key}</p>
                 </div>
@@ -124,9 +124,12 @@ const ProjectDetail = () => {
           <section className={sectionStyle}>
             <p>🛠️ 사용 기술 🛠️</p>
             <section className="flex gap-2">
-              {project?.technology.map((tech) => {
+              {project?.technology.map((tech, idx) => {
                 return (
-                  <span className="px-2 py-1 text-base bg-content text-background rounded-xl">
+                  <span
+                    key={idx}
+                    className="px-2 py-1 text-base bg-content text-background rounded-xl"
+                  >
                     {tech}
                   </span>
                 );
@@ -148,21 +151,21 @@ const ProjectDetail = () => {
           <p>📒 KPT 회고 📒</p>
 
           <section className="flex items-center gap-3">
-            <p className="px-2 py-1 text-base bg-content text-background rounded-xl">
+            <p className="px-2 py-1 text-sm bg-content text-background rounded-xl">
               KEEP
             </p>
             <p className="text-base">{project?.keep}</p>
           </section>
 
           <section className="flex items-center gap-3 ">
-            <p className="px-2 py-1 text-base bg-content text-background rounded-xl">
+            <p className="px-2 py-1 text-sm bg-content text-background rounded-xl">
               PROBLEM
             </p>
             <p className="text-base">{project?.problem}</p>
           </section>
 
           <section className="flex items-center gap-3">
-            <p className="px-2 py-1 text-base bg-content text-background rounded-xl">
+            <p className="px-2 py-1 text-sm bg-content text-background rounded-xl">
               TRY
             </p>
             <p className="text-base">{project?.try}</p>
