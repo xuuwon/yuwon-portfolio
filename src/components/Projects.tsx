@@ -7,11 +7,10 @@ const Projects = () => {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.6 }}
       transition={{
         ease: "easeInOut",
-        duration: 2,
-        delay: 0.1,
+        duration: 1,
       }}
     >
       <section className="w-[1150px] mx-auto flex justify-end py-16 overflow-y-scroll h-screen scrollbar-hide">

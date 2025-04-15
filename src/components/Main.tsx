@@ -7,11 +7,10 @@ const Main = () => {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.6 }}
         transition={{
           ease: "easeInOut",
           duration: 2,
-          delay: 0.2,
         }}
       >
         <article className="w-[1150px] h-[570px] bg-content shadow-custom p-9 flex flex-col justify-between">
