@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <section className="flex justify-center">
-      <ScrollAnimation startingPoint="bottom" duration={2} amount="sm">
+      <ScrollAnimation startingPoint="bottom" duration={1} amount="sm">
         <nav className="fixed w-[1150px] top-[100px] z-50 flex flex-col items-start gap-6 text-3xl text-content">
           <Link to="/aboutMe" className="relative">
             <span
