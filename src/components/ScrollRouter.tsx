@@ -53,10 +53,11 @@ const ScrollRouter = () => {
 
   useEffect(() => {
     isScrollingRef.current = true; // ⭐️ 스크롤 시작
+
     if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
     scrollTimeoutRef.current = setTimeout(() => {
       isScrollingRef.current = false; // ⭐️ 일정 시간 후 다시 활성화
-    }, 200);
+    }, 500);
 
     const scrollToSection = () => {
       switch (location.pathname) {
