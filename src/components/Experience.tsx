@@ -13,11 +13,12 @@ const Experience = () => {
         duration: 1,
       }}
     >
-      <section className="w-[1150px] mx-auto flex justify-end py-16 h-screen overflow-y-scroll scrollbar-hide">
+      <section className="w-[1150px] mx-auto flex justify-end py-16 h-screen overflow-scroll scrollbar-hide">
         <section className="w-[870px] text-lg flex flex-col gap-7">
-          {experienceData.map((data) => {
+          {experienceData.map((data, idx) => {
             return (
               <ExperienceCard
+                key={idx}
                 title={data.title}
                 type={data.type}
                 period={data.period}
