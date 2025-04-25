@@ -2,8 +2,30 @@ import { motion } from "framer-motion";
 
 const Main = () => {
   return (
-    <section className="flex items-center justify-center min-h-screen bg-background">
-      {/* 주요 블록 */}
+    <section className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden bg-background">
+      <motion.div
+        initial={{ opacity: 0, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.6 }}
+        transition={{
+          ease: "easeInOut",
+          duration: 3,
+        }}
+      >
+        <div className="absolute w-[300px] h-[300px] rounded-full z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <img
+            src="/lemon.png"
+            className="absolute z-10 scale-125 rotate-45 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-70"
+            alt="lemon"
+          ></img>
+          {/* 노란 빛 */}
+          <div className="absolute w-full h-full rounded-full bg-[#ffe680] blur-[60px] opacity-80 -translate-x-1/2 -translate-y-1/2 top-1/3 left-1/3" />
+          {/* 연두색 빛 */}
+          <div className="absolute w-full h-full rounded-full bg-[#c5e17a] blur-[50px] opacity-70 -translate-x-1/2 -translate-y-1/2 top-2/3 left-2/3" />
+        </div>
+      </motion.div>
+
+      {/* 메인 콘텐츠 */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -12,26 +34,17 @@ const Main = () => {
           ease: "easeInOut",
           duration: 2,
         }}
+        className="z-10" // 배경보다 위에
       >
-        <article className="w-[1150px] h-[570px] bg-content shadow-custom p-9 flex flex-col justify-between">
-          {/* 독립적인 콘텐츠 영역 */}
-          <header className="flex flex-col w-[850px] gap-3">
-            {/* 제목 영역 */}
-            <h1 className="text-[120px] self-start leading-none font-main">
-              FRONT-END DEVELOPER
+        <section>
+          <header className="flex flex-col items-center w-[850px] gap-3 text-white">
+            <h1 className="text-[80px] text-center leading-none font-main">
+              PORTFOLIO
             </h1>
-            <hr className="w-[855px] h-0.5 bg-background" />
-            <h2 className="self-end text-xl">YUWON PORTFOLIO</h2>
+            <hr className="w-[600px] h-0.5 bg-white border-none" />
+            <h1 className="text-[20px] text-center">FRONT-END DEVELOPER</h1>
           </header>
-
-          <footer className="self-end text-xl text-right">
-            {/* 맨 아래 정보 영역 */}
-            <p>
-              사용자의 입장에서 늘 생각하며
-              <br /> 배움과 성장을 즐기는 <br /> 프론트엔드 개발자 조유원입니다.
-            </p>
-          </footer>
-        </article>
+        </section>
       </motion.div>
     </section>
   );
