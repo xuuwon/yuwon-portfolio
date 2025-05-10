@@ -1,4 +1,4 @@
-import { useRef, useCallback, useEffect, useState } from "react";
+import { useRef, useCallback, useEffect, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import Main from "./Main";
 import Navbar from "./Navbar";
@@ -21,13 +21,18 @@ const ScrollRouter = () => {
   const experienceRef = useRef<HTMLElement | null>(null);
   const contactRef = useRef<HTMLElement | null>(null);
 
-  const sectionRefs: Record<SectionId, React.RefObject<HTMLElement | null>> = {
-    "": mainRef,
-    aboutMe: aboutMeRef,
-    project: projectRef,
-    experience: experienceRef,
-    contact: contactRef,
-  };
+  const sectionRefs = useMemo<
+    Record<SectionId, React.RefObject<HTMLElement | null>>
+  >(
+    () => ({
+      "": mainRef,
+      aboutMe: aboutMeRef,
+      project: projectRef,
+      experience: experienceRef,
+      contact: contactRef,
+    }),
+    []
+  );
 
   const [showNav, setShowNav] = useState(false);
 
