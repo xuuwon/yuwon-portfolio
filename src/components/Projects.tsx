@@ -7,13 +7,13 @@ const Projects = () => {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.6 }}
+      viewport={{ once: false, amount: 0.1 }}
       transition={{
         ease: "easeInOut",
         duration: 1,
       }}
     >
-      <section className="w-[1150px] mx-auto flex justify-end py-16 overflow-y-scroll h-screen scrollbar-hide">
+      <section className="w-[1150px] mx-auto flex justify-end py-16">
         <section className="w-[870px] text-lg text-background flex flex-wrap gap-7">
           {projectData.map((project) => {
             return (
