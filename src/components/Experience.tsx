@@ -7,13 +7,13 @@ const Experience = () => {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.6 }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{
         ease: "easeInOut",
-        duration: 1,
+        duration: 1.5,
       }}
     >
-      <section className="w-[1150px] mx-auto flex justify-end py-16 h-screen overflow-scroll scrollbar-hide">
+      <section className="w-[1150px] mx-auto flex justify-end py-16 min-h-screen">
         <section className="w-[870px] text-lg flex flex-col gap-7">
           {experienceData.map((data, idx) => {
             return (
