@@ -1,6 +1,5 @@
-// ScrollRouter.jsx
-import { useEffect, useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useRef, useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Main from "./Main";
 import Navbar from "./Navbar";
 import AboutMe from "./AboutMe";
@@ -8,12 +7,13 @@ import Projects from "./Projects";
 import Experience from "./Experience";
 import Contact from "./Contact";
 
+export type SectionId = "" | "aboutMe" | "project" | "experience" | "contact";
+
 const ScrollRouter = () => {
-  const location = useLocation();
   const navigate = useNavigate();
 
-  const isScrollingRef = useRef(false); // ⭐️ 추가
-  const scrollTimeoutRef = useRef<number | null>(null); // ⭐️ 추가
+  const isScrollingRef = useRef(false);
+  const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const mainRef = useRef<HTMLElement | null>(null);
   const aboutMeRef = useRef<HTMLElement | null>(null);
@@ -21,74 +21,59 @@ const ScrollRouter = () => {
   const experienceRef = useRef<HTMLElement | null>(null);
   const contactRef = useRef<HTMLElement | null>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (isScrollingRef.current) return; // ⭐️ 스크롤 중엔 무시
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
-            if (location.pathname !== `/${id}`) {
-              navigate(`/${id}`, { replace: true });
-            }
-          }
-        }
-      },
-      {
-        threshold: 0.6,
-      }
-    );
+  const sectionRefs: Record<SectionId, React.RefObject<HTMLElement | null>> = {
+    "": mainRef,
+    aboutMe: aboutMeRef,
+    project: projectRef,
+    experience: experienceRef,
+    contact: contactRef,
+  };
 
-    const sections = [
-      mainRef.current,
-      aboutMeRef.current,
-      projectRef.current,
-      experienceRef.current,
-      contactRef.current,
-    ];
-
-    sections.forEach((sec) => sec && observer.observe(sec));
-    return () => observer.disconnect();
-  }, [navigate, location.pathname]);
+  const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
-    isScrollingRef.current = true; // ⭐️ 스크롤 시작
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const ninetyVH = window.innerHeight * 0.9;
+      const documentHeight = document.body.scrollHeight;
+      const windowHeight = window.innerHeight;
 
-    if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
-    scrollTimeoutRef.current = setTimeout(() => {
-      isScrollingRef.current = false; // ⭐️ 일정 시간 후 다시 활성화
-    }, 500);
+      const nearBottom = scrollY + windowHeight >= documentHeight - 100;
 
-    const scrollToSection = () => {
-      switch (location.pathname) {
-        case "/":
-          mainRef.current?.scrollIntoView({ behavior: "smooth" });
-          break;
-        case "/aboutMe":
-          aboutMeRef.current?.scrollIntoView({ behavior: "smooth" });
-          break;
-        case "/project":
-          projectRef.current?.scrollIntoView({ behavior: "smooth" });
-          break;
-        case "/experience":
-          experienceRef.current?.scrollIntoView({ behavior: "smooth" });
-          break;
-        case "/contact":
-          contactRef.current?.scrollIntoView({ behavior: "smooth" });
-          break;
-        default:
-          break;
+      // 조건 1: 90vh 이상일 때 보이기
+      // 조건 2: 전체 끝(100px 전)에 도달하면 숨기기
+      if (scrollY > ninetyVH && !nearBottom) {
+        setShowNav(true);
+      } else {
+        setShowNav(false);
       }
     };
 
-    scrollToSection();
-  }, [location]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // ✅ 메뉴 클릭 시에만 스크롤 + URL 변경
+  const scrollToSection = useCallback(
+    (id: SectionId) => {
+      const ref = sectionRefs[id];
+      if (ref?.current) {
+        isScrollingRef.current = true;
+        ref.current.scrollIntoView({ behavior: "smooth" });
+        navigate(`/${id}`, { replace: true });
+
+        if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+        scrollTimeoutRef.current = setTimeout(() => {
+          isScrollingRef.current = false;
+        }, 500);
+      }
+    },
+    [navigate, sectionRefs]
+  );
 
   return (
     <div>
-      {location.pathname !== "/" && location.pathname !== "/contact" && (
-        <Navbar />
-      )}
+      <Navbar scrollToSection={scrollToSection} showNav={showNav} />
       <section ref={mainRef} id="" style={{ height: "100vh" }}>
         <Main />
       </section>
@@ -98,7 +83,7 @@ const ScrollRouter = () => {
       <section ref={projectRef} id="project" style={{ height: "100vh" }}>
         <Projects />
       </section>
-      <section ref={experienceRef} id="experience" style={{ height: "100vh" }}>
+      <section ref={experienceRef} id="experience" style={{ height: "180vh" }}>
         <Experience />
       </section>
       <section ref={contactRef} id="contact" style={{ height: "100vh" }}>
