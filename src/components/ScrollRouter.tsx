@@ -88,7 +88,7 @@ const ScrollRouter = () => {
       <section ref={projectRef} id="project" style={{ height: "100vh" }}>
         <Projects />
       </section>
-      <section ref={experienceRef} id="experience" style={{ height: "180vh" }}>
+      <section ref={experienceRef} id="experience">
         <Experience />
       </section>
       <section ref={contactRef} id="contact" style={{ height: "100vh" }}>
