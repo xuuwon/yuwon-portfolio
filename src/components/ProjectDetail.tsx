@@ -15,7 +15,7 @@ const ProjectDetail = () => {
   const numberId = Number(projectId);
   const project = projectDetailData.find((item) => item.id === numberId);
 
-  const sectionStyle = "flex flex-col items-center gap-5";
+  const sectionStyle = "flex flex-col items-center gap-10";
   const indexArr: string[] = [
     "1️⃣",
     "2️⃣",
@@ -49,7 +49,9 @@ const ProjectDetail = () => {
 
         <section className={sectionStyle}>
           <p>{project?.title}</p>
-          <p className="text-base">{project?.description}</p>
+          <p className="text-center whitespace-pre-line text-base/8">
+            {project?.description}
+          </p>
 
           <section className="flex gap-2">
             {project?.github && (
@@ -82,43 +84,48 @@ const ProjectDetail = () => {
           </section>
         </section>
 
-        <hr className="w-[1150px] h-0.5 bg-content" />
+        <hr className="w-[1150px] h-[1px] bg-content" />
 
         <section className={sectionStyle}>
-          <img src={project?.image} />
+          <img
+            src={project?.image}
+            className="w-[710px] h-[400px] rounded-3xl drop-shadow-2xl"
+          />
         </section>
-
-        <hr className="w-[1150px] h-0.5 bg-content" />
 
         <section className={sectionStyle}>
           <p>👪 팀 구성 👪</p>
           <p className="text-base">{project?.team}</p>
         </section>
 
-        <hr className="w-[1150px] h-0.5 bg-content" />
+        <hr className="w-[1150px] h-[1px] bg-content" />
 
         <section className={sectionStyle}>
           <p>💻 프로젝트 기간 💻</p>
           <p className="text-base">{project?.period}</p>
         </section>
 
-        <hr className="w-[1150px] h-0.5 bg-content" />
+        <hr className="w-[1150px] h-[1px] bg-content" />
 
-        <section className={sectionStyle}>
-          <p>🗝️ 주요 기능 🗝️</p>
-          <section className="flex flex-col items-center gap-3">
-            {project?.keypoint.map((key, idx) => {
-              return (
-                <div className="flex gap-2" key={idx}>
-                  <p>{indexArr[idx]}</p>
-                  <p className="text-base">{key}</p>
-                </div>
-              );
-            })}
-          </section>
-        </section>
+        {project?.keypoint && (
+          <>
+            <section className={sectionStyle}>
+              <p>🗝️ 주요 기능 🗝️</p>
+              <section className="flex flex-col items-center gap-3">
+                {project?.keypoint.map((key, idx) => {
+                  return (
+                    <div className="flex gap-2" key={idx}>
+                      <p>{indexArr[idx]}</p>
+                      <p className="text-base">{key}</p>
+                    </div>
+                  );
+                })}
+              </section>
+            </section>
 
-        <hr className="w-[1150px] h-0.5 bg-content" />
+            <hr className="w-[1150px] h-[1px] bg-content" />
+          </>
+        )}
 
         {project?.technology && (
           <section className={sectionStyle}>
@@ -138,37 +145,48 @@ const ProjectDetail = () => {
           </section>
         )}
 
-        <hr className="w-[1150px] h-0.5 bg-content" />
+        <hr className="w-[1150px] h-[1px] bg-content" />
 
         <section className={sectionStyle}>
           <p>👩‍💻 프로젝트 기여도 👩‍💻</p>
-          <p className="text-base">{project?.contribution}</p>
+          <section className="flex flex-col items-center gap-3">
+            {project?.contribution.map((key, idx) => {
+              return (
+                <div className="flex gap-2" key={idx}>
+                  <p>{indexArr[idx]}</p>
+                  <p className="text-base whitespace-pre-line">{key}</p>
+                </div>
+              );
+            })}
+          </section>
         </section>
 
-        <hr className="w-[1150px] h-0.5 bg-content" />
+        <hr className="w-[1150px] h-[1px] bg-content" />
 
-        <section className={sectionStyle}>
+        <section className="flex flex-col items-center gap-6">
           <p>📒 KPT 회고 📒</p>
 
-          <section className="flex items-center gap-3">
+          <section className="flex items-center gap-4">
             <p className="px-2 py-1 text-sm bg-content text-background rounded-xl">
               KEEP
             </p>
-            <p className="text-base">{project?.keep}</p>
+            <p className="whitespace-pre-line text-base/8">{project?.keep}</p>
           </section>
 
-          <section className="flex items-center gap-3 ">
+          <section className="flex items-center gap-4">
             <p className="px-2 py-1 text-sm bg-content text-background rounded-xl">
               PROBLEM
             </p>
-            <p className="text-base">{project?.problem}</p>
+            <p className="whitespace-pre-line text-base/8">
+              {project?.problem}
+            </p>
           </section>
 
-          <section className="flex items-center gap-3">
+          <section className="flex items-center gap-4">
             <p className="px-2 py-1 text-sm bg-content text-background rounded-xl">
               TRY
             </p>
-            <p className="text-base">{project?.try}</p>
+            <p className="whitespace-pre-line text-base/8">{project?.try}</p>
           </section>
         </section>
       </section>
