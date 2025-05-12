@@ -16,9 +16,9 @@ export type ProjectDetailProps = {
   image: string;
   team: string;
   period: string;
-  keypoint: string[];
+  keypoint?: string[];
   technology?: string[];
-  contribution: string;
+  contribution: string[];
   keep: string;
   problem: string;
   try: string;
