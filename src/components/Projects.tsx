@@ -14,7 +14,7 @@ const Projects = () => {
       }}
     >
       <section className="w-[1150px] mx-auto flex justify-end py-16">
-        <section className="w-[870px] text-lg text-background flex flex-wrap gap-7">
+        <section className="w-[870px] text-lg text-background dark:text-background-dark flex flex-wrap gap-7">
           {projectData.map((project) => {
             return (
               <ProjectCard

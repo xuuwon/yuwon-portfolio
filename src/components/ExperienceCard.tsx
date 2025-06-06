@@ -8,7 +8,7 @@ const ExperienceCard = ({
   image,
 }: ExperienceCardProps) => {
   return (
-    <section className="w-[828px] border-2 text-content border-content rounded-3xl flex overflow-hidden text-base">
+    <section className="w-[828px] border-2 text-content dark:text-content-dark dark:border-content-dark border-content rounded-3xl flex overflow-hidden text-base bg-card dark:bg-background-dark">
       {/* 텍스트 영역 */}
       <section className="w-[528px] p-7 flex flex-col gap-3">
         <p className="text-xl">{title}</p>
@@ -16,7 +16,7 @@ const ExperienceCard = ({
           {type.map((type, index) => (
             <span
               key={index}
-              className="px-2 py-1 text-sm rounded-full bg-content text-background"
+              className="px-2 py-1 text-sm rounded-full bg-content dark:bg-content-dark dark:text-background-dark text-background"
             >
               {type}
             </span>

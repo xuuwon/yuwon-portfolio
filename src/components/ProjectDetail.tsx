@@ -39,7 +39,7 @@ const ProjectDetail = () => {
         duration: 1,
       }}
     >
-      <section className="relative w-[1150px] mx-auto flex flex-col items-center py-16  text-content text-xl gap-8">
+      <section className="relative w-[1150px] mx-auto flex flex-col items-center py-16  text-content dark:text-content-dark text-xl gap-8">
         <button
           className="absolute left-0 flex items-center gap-2 text-base top-16"
           onClick={() => navigate(-1)} // 이전 페이지로
@@ -58,7 +58,7 @@ const ProjectDetail = () => {
               <a
                 href={project?.github}
                 target="_blank"
-                className="px-2 py-1 text-base border cursor-pointer border-content rounded-xl hover:bg-content hover:text-background"
+                className="px-2 py-1 text-base border cursor-pointer border-content dark:border-content-dark rounded-xl hover:bg-content hover:dark:bg-content-dark hover:text-background hover:dark:text-background-dark"
               >
                 Github Link
               </a>
@@ -67,7 +67,7 @@ const ProjectDetail = () => {
               <a
                 href={project?.presentation}
                 target="_blank"
-                className="px-2 py-1 text-base border cursor-pointer border-content rounded-xl hover:bg-content hover:text-background"
+                className="px-2 py-1 text-base border cursor-pointer border-content dark:border-content-dark rounded-xl hover:bg-content hover:dark:bg-content-dark hover:text-background hover:dark:text-background-dark"
               >
                 PPT Link
               </a>
@@ -76,7 +76,7 @@ const ProjectDetail = () => {
               <a
                 href={project?.projectLink}
                 target="_blank"
-                className="px-2 py-1 text-base border cursor-pointer border-content rounded-xl hover:bg-content hover:text-background"
+                className="px-2 py-1 text-base border cursor-pointer border-content dark:border-content-dark rounded-xl hover:bg-content hover:dark:bg-content-dark hover:text-background hover:dark:text-background-dark"
               >
                 Project Link
               </a>
@@ -84,7 +84,7 @@ const ProjectDetail = () => {
           </section>
         </section>
 
-        <hr className="w-[1150px] h-[1px] bg-content" />
+        <hr className="w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
 
         <section className={sectionStyle}>
           <img
@@ -98,14 +98,14 @@ const ProjectDetail = () => {
           <p className="text-base">{project?.team}</p>
         </section>
 
-        <hr className="w-[1150px] h-[1px] bg-content" />
+        <hr className="w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
 
         <section className={sectionStyle}>
           <p>💻 프로젝트 기간 💻</p>
           <p className="text-base">{project?.period}</p>
         </section>
 
-        <hr className="w-[1150px] h-[1px] bg-content" />
+        <hr className="w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
 
         {project?.keypoint && (
           <>
@@ -123,7 +123,7 @@ const ProjectDetail = () => {
               </section>
             </section>
 
-            <hr className="w-[1150px] h-[1px] bg-content" />
+            <hr className="w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
           </>
         )}
 
@@ -135,7 +135,7 @@ const ProjectDetail = () => {
                 return (
                   <span
                     key={idx}
-                    className="px-2 py-1 text-base bg-content text-background rounded-xl"
+                    className="px-2 py-1 text-base bg-content dark:bg-content-dark text-background dark:text-background-dark rounded-xl"
                   >
                     {tech}
                   </span>
@@ -145,7 +145,7 @@ const ProjectDetail = () => {
           </section>
         )}
 
-        <hr className="w-[1150px] h-[1px] bg-content" />
+        <hr className="w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
 
         <section className={sectionStyle}>
           <p>👩‍💻 프로젝트 기여도 👩‍💻</p>
@@ -161,20 +161,20 @@ const ProjectDetail = () => {
           </section>
         </section>
 
-        <hr className="w-[1150px] h-[1px] bg-content" />
+        <hr className="w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
 
         <section className="flex flex-col items-center gap-6">
           <p>📒 KPT 회고 📒</p>
 
           <section className="flex items-center gap-4">
-            <p className="px-2 py-1 text-sm bg-content text-background rounded-xl">
+            <p className="px-2 py-1 text-sm bg-content dark:bg-content-dark text-background dark:text-background-dark rounded-xl">
               KEEP
             </p>
             <p className="whitespace-pre-line text-base/8">{project?.keep}</p>
           </section>
 
           <section className="flex items-center gap-4">
-            <p className="px-2 py-1 text-sm bg-content text-background rounded-xl">
+            <p className="px-2 py-1 text-sm bg-content dark:bg-content-dark text-background dark:text-background-dark rounded-xl">
               PROBLEM
             </p>
             <p className="whitespace-pre-line text-base/8">
@@ -183,7 +183,7 @@ const ProjectDetail = () => {
           </section>
 
           <section className="flex items-center gap-4">
-            <p className="px-2 py-1 text-sm bg-content text-background rounded-xl">
+            <p className="px-2 py-1 text-sm bg-content dark:bg-content-dark text-background dark:text-background-dark rounded-xl">
               TRY
             </p>
             <p className="whitespace-pre-line text-base/8">{project?.try}</p>

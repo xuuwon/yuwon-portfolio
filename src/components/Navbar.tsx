@@ -7,7 +7,7 @@ const Navbar = ({
   scrollToSection: (id: SectionId) => void;
   showNav: boolean;
 }) => {
-  const underlineAnimation = `after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-content after:transition-all after:duration-300 hover:after:w-full`;
+  const underlineAnimation = `after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-content after:dark:bg-content-dark after:transition-all after:duration-300 hover:after:w-full`;
 
   return (
     <section
@@ -17,7 +17,7 @@ const Navbar = ({
           : "opacity-0 pointer-events-none"
       }`}
     >
-      <nav className="fixed w-[1150px] top-[100px] z-50 flex flex-col items-start gap-6 text-3xl text-content">
+      <nav className="fixed w-[1150px] top-[100px] z-50 flex flex-col items-start gap-6 text-3xl text-content dark:text-content-dark">
         <button
           onClick={() => scrollToSection("aboutMe")}
           className={`relative ${underlineAnimation}`}

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <section className="relative flex items-center justify-center min-h-screen bg-background">
+    <section className="relative flex items-center justify-center min-h-screen bg-background dark:bg-background-dark">
       <motion.div
         initial={{ opacity: 0, y: 0 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -37,11 +37,11 @@ const Contact = () => {
         className="z-10" // 배경보다 위에
       >
         <section>
-          <header className="flex flex-col items-center w-[850px] gap-3 text-white">
+          <header className="flex flex-col items-center w-[850px] gap-3 text-content dark:text-content-dark">
             <h1 className="text-[80px] text-center leading-none font-main">
               Thank You
             </h1>
-            <hr className="w-[600px] h-0.5 bg-white border-none" />
+            <hr className="w-[600px] h-0.5 bg-content dark:bg-content-dark border-none" />
             <h1 className="text-[20px] text-center">읽어주셔서 감사합니다.</h1>
           </header>
         </section>

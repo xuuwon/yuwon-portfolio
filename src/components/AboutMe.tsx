@@ -12,22 +12,22 @@ const AboutMe = () => {
       }}
     >
       <section className="w-[1150px] mx-auto flex justify-end py-16">
-        <section className="w-[870px] text-lg text-content flex flex-col gap-4">
+        <section className="w-[870px] text-lg text-content dark:text-content-dark flex flex-col gap-4">
           <section className="flex gap-3">
             <img src="/photo.jpg" className="w-[150px] rounded-3xl" />
             <div className="flex flex-col gap-3 p-3">
               <div className="flex gap-3">
                 <p className="text-2xl">조유원</p>
-                <div className="flex gap-2 text-sm text-background">
+                <div className="flex gap-2 text-sm text-background dark:text-background-dark">
                   <a
-                    className="p-1.5 border border-content text-content rounded-2xl hover:bg-content hover:text-background"
+                    className="p-1.5 border border-content dark:border-content-dark text-content dark:text-content-dark rounded-2xl hover:bg-content hover:dark:bg-content-dark hover:text-background hover:dark:text-background-dark"
                     href="https://github.com/xuuwon"
                     target="_blank"
                   >
                     GITHUB
                   </a>
                   <a
-                    className="p-1.5 border border-content text-content rounded-2xl hover:bg-content hover:text-background"
+                    className="p-1.5 border border-content dark:border-content-dark text-content dark:text-content-dark rounded-2xl hover:bg-content hover:dark:bg-content-dark hover:text-background hover:dark:text-background-dark"
                     href="https://xuwon.tistory.com/"
                     target="_blank"
                   >
@@ -51,7 +51,7 @@ const AboutMe = () => {
 
           <section className="flex flex-col gap-3">
             <p className="text-2xl">🔎 Profile</p>
-            <hr className="w-[870px] h-0.5 bg-content" />
+            <hr className="w-[870px] h-0.5 bg-content dark:bg-content-dark" />
 
             <div className="flex gap-16">
               <div className="flex gap-5">
@@ -76,7 +76,7 @@ const AboutMe = () => {
 
           <section className="flex flex-col gap-3">
             <p className="text-2xl">🙋🏻 About Me</p>
-            <hr className="w-[870px] h-0.5 bg-content" />
+            <hr className="w-[870px] h-0.5 bg-content dark:bg-content-dark" />
 
             <div>
               <p>
@@ -92,7 +92,7 @@ const AboutMe = () => {
 
           <section className="flex flex-col gap-3">
             <p className="text-2xl">⚒️ Skills</p>
-            <hr className="w-[870px] h-0.5 bg-content" />
+            <hr className="w-[870px] h-0.5 bg-content dark:bg-content-dark" />
             <div className="flex justify-center gap-10 pt-2">
               <img src="/HTML.svg" width={40} />
               <img src="/CSS.svg" width={40} />

@@ -1,19 +1,33 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollRouter from "./components/ScrollRouter";
-import ProjectDetail from "./components/ProjectDetail";
+import { Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [isDark, setIsDark] = useState(
+    () => localStorage.getItem("theme") === "dark"
+  );
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (isDark) {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  }, [isDark]);
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/projects/:projectId" element={<ProjectDetail />} />
-        <Route path="/" element={<ScrollRouter />} />
-        <Route path="/aboutMe" element={<ScrollRouter />} />
-        <Route path="/project" element={<ScrollRouter />} />
-        <Route path="/experience" element={<ScrollRouter />} />
-        <Route path="/contact" element={<ScrollRouter />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="min-h-screen transition-colors duration-300 bg-background text-content dark:bg-background-dark dark:text-content-dark">
+      <button
+        className="fixed z-50 p-2 bg-gray-200 rounded top-4 right-4 dark:bg-gray-700"
+        onClick={() => setIsDark((prev) => !prev)}
+        aria-label="Toggle Dark Mode"
+      >
+        {isDark ? "🌙" : "☀️"}
+      </button>
+
+      <Outlet />
+    </div>
   );
 }
 
