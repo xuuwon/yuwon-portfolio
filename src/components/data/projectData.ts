@@ -5,14 +5,14 @@ export const projectData: ProjectCardProps[] = [
   {
     id: 1,
     team: "팀",
-    type: "프론트엔드 팀원",
+    type: "프론트엔드 / 팀원",
     title: "도르멍 🌴 \n- 제주의 하루를 선물해 드립니다. 💝",
     intro: "제주도의 숨겨진 장소를 랜덤으로 추천해주는 여행 서비스입니다.",
   },
   {
     id: 2,
     team: "팀",
-    type: "프론트엔드 팀장",
+    type: "프론트엔드 / 팀장",
     title: "툰츄 😺 \n- 다양한 웹툰들을 툰츄에서 즐겨보세요. 🐈",
     intro: "다양한 태그들로 취향에 맞는 웹툰을 찾을 수 있는 서비스입니다.",
   },
@@ -22,6 +22,13 @@ export const projectData: ProjectCardProps[] = [
     type: "기획 및 프론트엔드",
     title: "개인 포트폴리오 페이지 제작 📒",
     intro: "조유원의 프론트엔드 개발자 포트폴리오 페이지입니다!",
+  },
+  {
+    id: 4,
+    team: "팀",
+    type: "기획 및 프론트엔드 / 팀장",
+    title: "마음결 💝 \n- 하루 5분, 마음의 결을 읽다. 💐 ",
+    intro: "마음결은 감정을 이해하고 하루의 마무리를 돕는 서비스입니다.",
   },
 ];
 
@@ -122,5 +129,28 @@ export const projectDetailData: ProjectDetailProps[] = [
     problem:
       "사용자 인터렉션(hover, animation 등)이 풍부하지 않은 편이라 다소 정적인 것 같다는 피드백을 받았다.",
     try: "색상 대비 등 접근성 요소를 더 고려한 UI 개선과 인터랙션 등을 추가하고 싶다.",
+  },
+  {
+    id: 4,
+    title: "마음결 (心結) - 하루 5분, 마음의 결을 읽다 🪄",
+    description:
+      "국민대학교 경영정보학부 캡스톤디자인 프로젝트로 진행한\n2030 세대의 우울증 문제 해결을 위한 감정 일기 서비스입니다.\nAI 감정 분석과 리포트, 감정 캘린더, 코인 보상 시스템 등 다양한 기능을 통해 감정 인식과 자기 성찰을 돕습니다.",
+    github: "https://github.com/xuuwon/maeumgyeol",
+    projectLink: "https://maeumgyeol.vercel.app/",
+    image: "/maeumgyeol.jpg",
+    video: "/maeumgyeol-video.mp4",
+    team: "프론트엔드 1명 / 기획 4명",
+    period: "2024.03 ~ 2024.06 (12주) / 개발 3주",
+    technology: ["Next.js", "TypeScript", "Zustand", "TailwindCSS", "Figma"],
+    contribution: [
+      "프론트엔드 전체 구현 및 UI/UX 흐름 설계",
+      "AI 감정 분석 결과 시각화 (감정 리포트 및 감정 캘린더) 구현",
+      "캐릭터 커스터마이징 및 아이템 구매 기능 구현",
+      "코인 보상 시스템 및 감정 기반 맞춤 콘텐츠 제공 기능 설계",
+    ],
+    keep: "사용자가 감정의 흐름을 자연스럽게 인지할 수 있도록 직관적인 UI를 설계했으며, 실시간으로 정보가 반영되도록 코드를 구현했습니다.",
+    problem:
+      "짧은 개발 기간으로 인해 핵심 기능 구현에 집중하느라 소셜 로그인, 로그인 유지, 회원 탈퇴 등 사용자 편의 기능을 충분히 구현하지 못했다.",
+    try: "앞으로는 GPT 모델을 활용한 감정 피드백 고도화, 음성 및 이미지 등 비정형 입력 지원, 맞춤형 마음 챙김 콘텐츠 강화 등 다양한 기능을 추가해보고 싶습니다.",
   },
 ];
