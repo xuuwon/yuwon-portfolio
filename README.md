@@ -1,54 +1,79 @@
-# React + TypeScript + Vite
+# 📒 개인 포트폴리오 페이지 제작
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a033f1e7-1231-449d-83aa-a4dd7048a665" alt="프로젝트 대표 이미지" width="600"/>
+</p>
 
-Currently, two official plugins are available:
+## 📌 개요
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Figma를 통해 직접 기획하고 디자인한 개인 포트폴리오 페이지입니다.  
+제가 좋아하는 **레몬**을 포인트로 삼아 색감과 분위기를 디자인에 녹여냈습니다.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ 사용 기술
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+| Category     | Stack                               |
+|--------------|--------------------------------------|
+| Language     | TypeScript                          |
+| Style        | TailwindCSS                         |
+| Formatting   | Prettier                            |
+| Design Tool  | Figma                               |
+| Deployment   | Vercel     |
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⏱️ 개발 기간
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **2025.03 ~ 2025.05 (총 8주)**
+- **개인 프로젝트**
+
+---
+
+## 🔗 링크
+
+- 👉 [프로젝트 사이트](https://yuwon-portfolio.vercel.app/)
+- 📂 [GitHub Repository](https://github.com/xuuwon/portfolio.git)
+- ✍️ [스크롤 기반 싱글 페이지 라우팅 구현하기 - Tistory](https://xuwon.tistory.com/54)
+
+---
+
+## ✨ 주요 기능
+
+- 소개 > 프로젝트 > 경험 순으로 구성된 **단일 페이지 형식**
+- **프로젝트 상세 정보** 표시
+- **외부 링크 버튼** (GitHub, 티스토리 등) 제공
+- **다크모드 / 라이트모드 지원**
+- 재사용 가능한 컴포넌트 설계로 **컴포넌트화 및 유지보수성 강화**
+
+---
+
+## 📈 기여 내용 (주요 구현 내용)
+
+- UI/UX 기획 및 Figma를 통한 직접 디자인
+- TailwindCSS로 빠르고 일관된 스타일링
+- 재사용 가능한 컴포넌트 설계
+
+---
+
+## 💡 개선 및 시도
+
+- 색상 대비, 시인성 등 **접근성** 향상을 위한 UI 개선 계획
+- 다국어 지원 및 SEO 향상 방안도 고려 중
+
+---
+
+## 📸 스크린샷
+
+| 메인 화면 | 다크모드 |
+|-----------|----------|
+| ![image](https://github.com/user-attachments/assets/4255e95f-2770-44e7-93ad-c54f6bb7a54c) | ![image](https://github.com/user-attachments/assets/61090dca-2ca0-4dd4-ab41-5301d528421a) |
+| ![image](https://github.com/user-attachments/assets/3816acc1-29a5-4a5b-993d-60e7edfa2b6b) | ![image](https://github.com/user-attachments/assets/3c77d99e-b6e9-436c-be0b-aa1ebd028924) |
+| ![image](https://github.com/user-attachments/assets/ddb83f73-34b2-454e-bf23-6225dcb082b0) | ![image](https://github.com/user-attachments/assets/f39ae6fb-32cf-4023-be3f-7f8b0c489486) |
+| ![image](https://github.com/user-attachments/assets/5e74e212-b94a-4114-917a-5598195ab848) | ![image](https://github.com/user-attachments/assets/9581d6ce-e24e-48b8-a5e7-64738549537e) |
+| ![image](https://github.com/user-attachments/assets/9aab9287-b877-4ba3-8a53-c8b67967863d) | ![image](https://github.com/user-attachments/assets/3f731af0-f420-4e7b-b47b-08e5637b6269) |
+| ![image](https://github.com/user-attachments/assets/73ad639a-b58b-478f-8e90-7c8b5d3cc511) | ![image](https://github.com/user-attachments/assets/5ccbb818-f504-4da3-894b-401f41ad0716) |
+
+
+---
+
