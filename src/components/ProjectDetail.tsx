@@ -6,7 +6,9 @@ import { useEffect } from "react";
 
 const ProjectDetail = () => {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100); // 100ms 후에 실행
   }, []);
 
   const navigate = useNavigate();
@@ -87,10 +89,23 @@ const ProjectDetail = () => {
         <hr className="w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
 
         <section className={sectionStyle}>
-          <img
-            src={project?.image}
-            className="w-[710px] h-[400px] rounded-3xl drop-shadow-2xl"
-          />
+          {project?.video ? (
+            <video
+              src={project.video}
+              poster={project.image} // 썸네일 이미지가 있다면 넣기
+              className="w-[710px] h-[400px] rounded-3xl drop-shadow-2xl"
+              controls
+              autoPlay={false}
+              muted={false}
+              loop={false}
+            />
+          ) : (
+            <img
+              src={project?.image}
+              className="w-[710px] h-[400px] rounded-3xl drop-shadow-2xl"
+              alt={project?.title}
+            />
+          )}
         </section>
 
         <section className={sectionStyle}>
