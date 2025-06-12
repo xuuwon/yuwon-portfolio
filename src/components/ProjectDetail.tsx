@@ -2,20 +2,25 @@ import { motion } from "framer-motion";
 import { useNavigate, useParams } from "react-router-dom";
 import { projectDetailData } from "./data/projectData";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const ProjectDetail = () => {
-  useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 100); // 100ms 후에 실행
-  }, []);
-
   const navigate = useNavigate();
 
   const { projectId } = useParams(); // 라우트에 맞춰서 해줘야 함
   const numberId = Number(projectId);
   const project = projectDetailData.find((item) => item.id === numberId);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // window가 아니라, 스크롤 가능한 부모 엘리먼트가 있다면 그걸 0으로
+    if (containerRef.current) {
+      containerRef.current.scrollTop = 0;
+    }
+    // 혹은 window 스크롤 위치 초기화도 시도
+    window.scrollTo(0, 0);
+  }, []);
 
   const sectionStyle = "flex flex-col items-center gap-10";
   const indexArr: string[] = [
