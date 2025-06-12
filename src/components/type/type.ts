@@ -14,6 +14,7 @@ export type ProjectDetailProps = {
   presentation?: string;
   projectLink?: string;
   image: string;
+  video?: string;
   team: string;
   period: string;
   keypoint?: string[];
