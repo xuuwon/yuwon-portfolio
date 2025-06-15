@@ -10,7 +10,7 @@ const ProjectCard = ({ id, team, type, title, intro }: ProjectCardProps) => {
   };
 
   return (
-    <section className="relative z-10 w-full min-w-[300px] lg:w-[400px] h-[200px] md:h-[275px] rounded-3xl border-2 border-content dark:border-content-dark bg-card dark:bg-background-dark">
+    <section className="relative z-10 w-full lg:w-[400px] h-[200px] md:h-[275px] rounded-3xl border-2 border-content dark:border-content-dark bg-card dark:bg-background-dark">
       {/* 배경과 흐림 효과 */}
       <div className="absolute inset-0 transition-all duration-200 rounded-3xl hover:backdrop-blur-sm">
         {/* 호버 시 나타나는 버튼 */}

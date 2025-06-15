@@ -20,13 +20,13 @@ const Projects = () => {
     >
       <section
         className={clsx(
-          "w-full px-10 py-16 flex",
+          "w-full px-5 py-16 flex",
           isTablet ? "justify-center" : "justify-end"
         )}
       >
         <section
           className={clsx(
-            "w-full max-w-[870px] text-lg text-background dark:text-background-dark flex justify-center flex-wrap gap-7",
+            "w-full text-lg text-background dark:text-background-dark flex justify-center flex-wrap gap-7",
             isMobile ? "flex-col" : "",
             isTablet ? "" : "mr-28"
           )}
