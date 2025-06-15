@@ -37,9 +37,10 @@ const ExperienceCard = ({
           ))}
         </div>
         <p>{period}</p>
-        <p className="text-sm leading-7 whitespace-pre-line md:text-base">
-          {intro}
-        </p>
+        <p
+          className="text-sm leading-7 whitespace-pre-line md:text-base"
+          dangerouslySetInnerHTML={{ __html: intro }}
+        ></p>
       </section>
 
       {/* 이미지 영역 */}
