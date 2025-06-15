@@ -1,7 +1,7 @@
 # 📒 개인 포트폴리오 페이지 제작
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a033f1e7-1231-449d-83aa-a4dd7048a665" alt="프로젝트 대표 이미지" width="600"/>
+  <img src="https://github.com/user-attachments/assets/b7fe52fe-3333-4ac2-8667-cc8103b0369c" alt="프로젝트 대표 이미지" width="600"/>
 </p>
 
 ## 📌 개요
@@ -13,13 +13,13 @@ Figma를 통해 직접 기획하고 디자인한 개인 포트폴리오 페이�
 
 ## 🛠️ 사용 기술
 
-| Category     | Stack                               |
-|--------------|--------------------------------------|
-| Language     | TypeScript                          |
-| Style        | TailwindCSS                         |
-| Formatting   | Prettier                            |
-| Design Tool  | Figma                               |
-| Deployment   | Vercel     |
+<div align='center'>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
+</div>
 
 ---
 
@@ -48,7 +48,7 @@ Figma를 통해 직접 기획하고 디자인한 개인 포트폴리오 페이�
 
 ---
 
-## 📈 기여 내용 (주요 구현 내용)
+## 📈 주요 구현 내용
 
 - UI/UX 기획 및 Figma를 통한 직접 디자인
 - TailwindCSS로 빠르고 일관된 스타일링
