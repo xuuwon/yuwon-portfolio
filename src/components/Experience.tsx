@@ -19,7 +19,7 @@ const Experience = () => {
     >
       <section
         className={clsx(
-          "w-full px-10 py-16 flex",
+          "w-full px-5 py-16 flex",
           isTablet ? "justify-center" : "justify-end"
         )}
       >
