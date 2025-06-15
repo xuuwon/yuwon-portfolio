@@ -70,6 +70,20 @@ export const projectDetailData: ProjectDetailProps[] = [
     problem:
       "액세스 및 리프레시 토큰을 받아올 때 역량 부족으로 httpOnly와 Secure 속성을 설정하지 못해 보안상 문제가 발생했다.",
     try: "유저 관련 작업을 맡은 만큼, 보안에 더욱 신경을 쓰고, 시간을 충분히 할애하여 보안 조치를 강화하겠다.",
+    blogs: [
+      {
+        title: "cva, clsx를 활용하여 레이어팝업 컴포넌트 만들기",
+        link: "https://xuwon.tistory.com/38",
+      },
+      {
+        title: "RTK Query로 로그인 API 구현하고 RTK로 유저 정보 관리하기",
+        link: "https://xuwon.tistory.com/42",
+      },
+      {
+        title: "[트러블 슈팅] 자동 로그인 트러블 슈팅",
+        link: "https://xuwon.tistory.com/46",
+      },
+    ],
   },
   {
     id: 2,
@@ -107,6 +121,20 @@ export const projectDetailData: ProjectDetailProps[] = [
     problem:
       "발표 종료 후 백엔드 개발자와의 연락이 끊기면서 서버가 정상적으로 작동하지 않아 최종 배포를 완료하지 못했다. \n프론트엔드 팀장으로서 작업 일정과 커뮤니케이션을 명확히 조율하지 못한 점이 원인이었다.",
     try: "앞으로는 작업 기한과 개발 일정을 철저히 관리하고, 주요 기능이나 작업 누락이 없도록 소통 체계를 더욱 명확히 운영하고자 한다.",
+    blogs: [
+      {
+        title: "Tailwind CSS + SCSS로 반응형 구현하기",
+        link: "https://xuwon.tistory.com/49",
+      },
+      {
+        title: "Zustand로 API 호출 및 상태 관리하기",
+        link: "https://xuwon.tistory.com/50",
+      },
+      {
+        title: "[리팩토링] 새로고침 해도 검색 결과가 남아있도록 하기",
+        link: "https://xuwon.tistory.com/51",
+      },
+    ],
   },
   {
     id: 3,
@@ -129,6 +157,12 @@ export const projectDetailData: ProjectDetailProps[] = [
     problem:
       "사용자 인터렉션(hover, animation 등)이 풍부하지 않은 편이라 다소 정적인 것 같다는 피드백을 받았다.",
     try: "색상 대비 등 접근성 요소를 더 고려한 UI 개선과 인터랙션 등을 추가하고 싶다.",
+    blogs: [
+      {
+        title: "스크롤 기반 싱글 페이지 라우팅 구현하기",
+        link: "https://xuwon.tistory.com/54",
+      },
+    ],
   },
   {
     id: 4,
@@ -148,9 +182,19 @@ export const projectDetailData: ProjectDetailProps[] = [
       "캐릭터 커스터마이징 및 아이템 구매 기능 구현",
       "코인 보상 시스템 및 감정 기반 맞춤 콘텐츠 제공 기능 설계",
     ],
-    keep: "사용자가 감정의 흐름을 자연스럽게 인지할 수 있도록 직관적인 UI를 설계했으며, 실시간으로 정보가 반영되도록 코드를 구현했습니다.",
+    keep: "사용자가 감정의 흐름을 자연스럽게 인지할 수 있도록 직관적인 UI를 설계했으며, 실시간으로 정보가 반영되도록 코드를 구현했다.",
     problem:
       "짧은 개발 기간으로 인해 핵심 기능 구현에 집중하느라 소셜 로그인, 로그인 유지, 회원 탈퇴 등 사용자 편의 기능을 충분히 구현하지 못했다.",
-    try: "앞으로는 GPT 모델을 활용한 감정 피드백 고도화, 음성 및 이미지 등 비정형 입력 지원, 맞춤형 마음 챙김 콘텐츠 강화 등 다양한 기능을 추가해보고 싶습니다.",
+    try: "앞으로는 GPT 모델을 활용한 감정 피드백 고도화, 음성 및 이미지 등 비정형 입력 지원, 맞춤형 마음 챙김 콘텐츠 강화 등 다양한 기능을 추가해보고 싶다.",
+    blogs: [
+      {
+        title: "Tiptap 라이브러리로 텍스트 에디터 만들기",
+        link: "https://xuwon.tistory.com/57",
+      },
+      {
+        title: "새로고침/뒤로가기 시도 시 모달 띄우기",
+        link: "https://xuwon.tistory.com/58",
+      },
+    ],
   },
 ];

@@ -23,6 +23,10 @@ export type ProjectDetailProps = {
   keep: string;
   problem: string;
   try: string;
+  blogs?: {
+    title: string;
+    link: string;
+  }[];
 };
 
 export type ExperienceCardProps = {
