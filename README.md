@@ -34,7 +34,6 @@ Figma를 통해 직접 기획하고 디자인한 개인 포트폴리오 페이�
 
 - 👉 [프로젝트 사이트](https://yuwon-portfolio.vercel.app/)
 - 📂 [GitHub Repository](https://github.com/xuuwon/portfolio.git)
-- ✍️ [스크롤 기반 싱글 페이지 라우팅 구현하기 - Tistory](https://xuwon.tistory.com/54)
 
 ---
 
