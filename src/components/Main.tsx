@@ -12,7 +12,7 @@ const Main = () => {
           duration: 3,
         }}
       >
-        <div className="absolute w-[300px] h-[300px] rounded-full z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute w-[150px] h-[150px] md:w-[300px] md:h-[300px] rounded-full z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <img
             src="/lemon.png"
             className="absolute z-10 scale-125 rotate-45 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-70"
@@ -37,12 +37,14 @@ const Main = () => {
         className="z-10" // 배경보다 위에
       >
         <section>
-          <header className="flex flex-col items-center w-[850px] gap-3 text-[#6E6E6E] dark:text-content-dark ">
-            <h1 className="text-[80px] text-center leading-none font-main">
+          <header className="flex flex-col items-center w-full max-w-[850px] px-4 gap-3 text-[#6E6E6E] dark:text-content-dark">
+            <h1 className="text-[50px] md:text-[80px] text-center leading-none font-main">
               PORTFOLIO
             </h1>
-            <hr className="w-[600px] h-0.5 bg-[#6E6E6E] dark:bg-content-dark border-none" />
-            <h1 className="text-[20px] text-center">FRONT-END DEVELOPER</h1>
+            <hr className="w-[300px] md:w-[600px] h-0.5 bg-[#6E6E6E] dark:bg-content-dark border-none" />
+            <h1 className="text-[16px] md:text-[20px] text-center">
+              FRONT-END DEVELOPER
+            </h1>
           </header>
         </section>
       </motion.div>

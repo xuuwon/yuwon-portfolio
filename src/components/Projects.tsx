@@ -1,8 +1,13 @@
+import clsx from "clsx";
 import { projectData } from "./data/projectData";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
+import { useIsMobile, useIsTablet } from "./hooks/useResponsive";
 
 const Projects = () => {
+  const isTablet = useIsTablet();
+  const isMobile = useIsMobile();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -13,8 +18,19 @@ const Projects = () => {
         duration: 1,
       }}
     >
-      <section className="w-[1150px] mx-auto flex justify-end py-16">
-        <section className="w-[870px] text-lg text-background dark:text-background-dark flex flex-wrap gap-7">
+      <section
+        className={clsx(
+          "w-full px-10 py-16 flex",
+          isTablet ? "justify-center" : "justify-end"
+        )}
+      >
+        <section
+          className={clsx(
+            "w-full max-w-[870px] text-lg text-background dark:text-background-dark flex justify-center flex-wrap gap-7",
+            isMobile ? "flex-col" : "",
+            isTablet ? "" : "mr-28"
+          )}
+        >
           {projectData.map((project) => {
             return (
               <ProjectCard

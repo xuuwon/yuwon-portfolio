@@ -3,8 +3,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import { projectDetailData } from "./data/projectData";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useEffect, useRef } from "react";
+import { useIsMobile, useIsTablet } from "./hooks/useResponsive";
+import clsx from "clsx";
 
 const ProjectDetail = () => {
+  const isMobile = useIsMobile();
+  const isTablet = useIsTablet();
+
   const navigate = useNavigate();
 
   const { projectId } = useParams(); // 라우트에 맞춰서 해줘야 함
@@ -46,17 +51,19 @@ const ProjectDetail = () => {
         duration: 1,
       }}
     >
-      <section className="relative w-[1150px] mx-auto flex flex-col items-center py-16  text-content dark:text-content-dark text-xl gap-8">
-        <button
-          className="absolute left-0 flex items-center gap-2 text-base top-16"
-          onClick={() => navigate(-1)} // 이전 페이지로
-        >
-          <ArrowBackIcon /> 이전
-        </button>
+      <section className="relative w-full max-w-[1150px] mx-auto flex flex-col items-center py-16 px-10  text-content dark:text-content-dark text-xl gap-8">
+        {!isTablet && (
+          <button
+            className="absolute left-0 flex items-center gap-2 text-base top-16"
+            onClick={() => navigate(-1)} // 이전 페이지로
+          >
+            <ArrowBackIcon /> 이전
+          </button>
+        )}
 
         <section className={sectionStyle}>
-          <p>{project?.title}</p>
-          <p className="text-center whitespace-pre-line text-base/8">
+          <p className="text-base text-center md:text-lg">{project?.title}</p>
+          <p className="text-sm text-center whitespace-pre-line md:text-base">
             {project?.description}
           </p>
 
@@ -65,7 +72,7 @@ const ProjectDetail = () => {
               <a
                 href={project?.github}
                 target="_blank"
-                className="px-2 py-1 text-base border cursor-pointer border-content dark:border-content-dark rounded-xl hover:bg-content hover:dark:bg-content-dark hover:text-background hover:dark:text-background-dark"
+                className="px-2 py-1 text-sm border cursor-pointer md:text-base border-content dark:border-content-dark rounded-xl hover:bg-content hover:dark:bg-content-dark hover:text-background hover:dark:text-background-dark"
               >
                 Github Link
               </a>
@@ -74,7 +81,7 @@ const ProjectDetail = () => {
               <a
                 href={project?.presentation}
                 target="_blank"
-                className="px-2 py-1 text-base border cursor-pointer border-content dark:border-content-dark rounded-xl hover:bg-content hover:dark:bg-content-dark hover:text-background hover:dark:text-background-dark"
+                className="px-2 py-1 text-sm border cursor-pointer md:text-base border-content dark:border-content-dark rounded-xl hover:bg-content hover:dark:bg-content-dark hover:text-background hover:dark:text-background-dark"
               >
                 PPT Link
               </a>
@@ -83,7 +90,7 @@ const ProjectDetail = () => {
               <a
                 href={project?.projectLink}
                 target="_blank"
-                className="px-2 py-1 text-base border cursor-pointer border-content dark:border-content-dark rounded-xl hover:bg-content hover:dark:bg-content-dark hover:text-background hover:dark:text-background-dark"
+                className="px-2 py-1 text-sm border cursor-pointer md:text-base border-content dark:border-content-dark rounded-xl hover:bg-content hover:dark:bg-content-dark hover:text-background hover:dark:text-background-dark"
               >
                 Project Link
               </a>
@@ -91,14 +98,14 @@ const ProjectDetail = () => {
           </section>
         </section>
 
-        <hr className="w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
+        <hr className="w-full max-w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
 
         <section className={sectionStyle}>
           {project?.video ? (
             <video
               src={project.video}
               poster={project.image} // 썸네일 이미지가 있다면 넣기
-              className="w-[710px] h-[400px] rounded-3xl drop-shadow-2xl"
+              className="w-[330px] h-auto md:w-[710px] md:h-[400px] rounded-3xl drop-shadow-2xl"
               controls
               autoPlay={false}
               muted={false}
@@ -107,55 +114,55 @@ const ProjectDetail = () => {
           ) : (
             <img
               src={project?.image}
-              className="w-[710px] h-[400px] rounded-3xl drop-shadow-2xl"
+              className="w-[330px] h-auto md:w-[710px] md:h-[400px] rounded-3xl drop-shadow-2xl"
               alt={project?.title}
             />
           )}
         </section>
 
         <section className={sectionStyle}>
-          <p>👪 팀 구성 👪</p>
-          <p className="text-base">{project?.team}</p>
+          <p className="text-base md:text-lg">👪 팀 구성 👪</p>
+          <p className="text-sm md:text-base">{project?.team}</p>
         </section>
 
-        <hr className="w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
+        <hr className="w-full max-w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
 
         <section className={sectionStyle}>
-          <p>💻 프로젝트 기간 💻</p>
-          <p className="text-base">{project?.period}</p>
+          <p className="text-base md:text-lg">💻 프로젝트 기간 💻</p>
+          <p className="text-sm md:text-base">{project?.period}</p>
         </section>
 
-        <hr className="w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
+        <hr className="w-full max-w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
 
         {project?.keypoint && (
           <>
             <section className={sectionStyle}>
-              <p>🗝️ 주요 기능 🗝️</p>
+              <p className="text-base md:text-lg">🗝️ 주요 기능 🗝️</p>
               <section className="flex flex-col items-center gap-3">
                 {project?.keypoint.map((key, idx) => {
                   return (
                     <div className="flex gap-2" key={idx}>
-                      <p>{indexArr[idx]}</p>
-                      <p className="text-base">{key}</p>
+                      <p className="text-sm md:text-base">{indexArr[idx]}</p>
+                      <p className="text-sm md:text-base">{key}</p>
                     </div>
                   );
                 })}
               </section>
             </section>
 
-            <hr className="w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
+            <hr className="w-full max-w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
           </>
         )}
 
         {project?.technology && (
           <section className={sectionStyle}>
-            <p>🛠️ 사용 기술 🛠️</p>
-            <section className="flex gap-2">
+            <p className="text-base md:text-lg">🛠️ 사용 기술 🛠️</p>
+            <section className="flex flex-wrap justify-center gap-2">
               {project?.technology.map((tech, idx) => {
                 return (
                   <span
                     key={idx}
-                    className="px-2 py-1 text-base bg-content dark:bg-content-dark text-background dark:text-background-dark rounded-xl"
+                    className="px-2 py-1 text-xs md:text-sm bg-content dark:bg-content-dark text-background dark:text-background-dark rounded-xl"
                   >
                     {tech}
                   </span>
@@ -165,48 +172,60 @@ const ProjectDetail = () => {
           </section>
         )}
 
-        <hr className="w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
+        <hr className="w-full max-w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
 
         <section className={sectionStyle}>
-          <p>👩‍💻 프로젝트 기여도 👩‍💻</p>
-          <section className="flex flex-col items-center gap-3">
+          <p className="text-base md:text-lg">👩‍💻 프로젝트 기여도 👩‍💻</p>
+          <section className="flex flex-col items-center gap-3 text-sm md:text-base">
             {project?.contribution.map((key, idx) => {
               return (
                 <div className="flex gap-2" key={idx}>
-                  <p>{indexArr[idx]}</p>
-                  <p className="text-base whitespace-pre-line">{key}</p>
+                  <p className="text-sm md:text-base">{indexArr[idx]}</p>
+                  <p className="text-sm text-center whitespace-pre-line md:text-base">
+                    {key}
+                  </p>
                 </div>
               );
             })}
           </section>
         </section>
 
-        <hr className="w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
+        <hr className="w-full max-w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
 
         <section className="flex flex-col items-center gap-6">
-          <p>📒 KPT 회고 📒</p>
+          <p className="text-base md:text-lg">📒 KPT 회고 📒</p>
 
-          <section className="flex items-center gap-4">
-            <p className="px-2 py-1 text-sm bg-content dark:bg-content-dark text-background dark:text-background-dark rounded-xl">
+          <section
+            className={clsx("flex items-center gap-4", isMobile && "flex-col")}
+          >
+            <p className="px-2 py-1 text-xs md:text-sm bg-content dark:bg-content-dark text-background dark:text-background-dark rounded-xl">
               KEEP
             </p>
-            <p className="whitespace-pre-line text-base/8">{project?.keep}</p>
+            <p className="text-sm text-center whitespace-pre-line md:text-base">
+              {project?.keep}
+            </p>
           </section>
 
-          <section className="flex items-center gap-4">
-            <p className="px-2 py-1 text-sm bg-content dark:bg-content-dark text-background dark:text-background-dark rounded-xl">
+          <section
+            className={clsx("flex items-center gap-4", isMobile && "flex-col")}
+          >
+            <p className="px-2 py-1 text-xs md:text-sm bg-content dark:bg-content-dark text-background dark:text-background-dark rounded-xl">
               PROBLEM
             </p>
-            <p className="whitespace-pre-line text-base/8">
+            <p className="text-sm text-center whitespace-pre-line md:text-base">
               {project?.problem}
             </p>
           </section>
 
-          <section className="flex items-center gap-4">
-            <p className="px-2 py-1 text-sm bg-content dark:bg-content-dark text-background dark:text-background-dark rounded-xl">
+          <section
+            className={clsx("flex items-center gap-4", isMobile && "flex-col")}
+          >
+            <p className="px-2 py-1 text-xs md:text-sm bg-content dark:bg-content-dark text-background dark:text-background-dark rounded-xl">
               TRY
             </p>
-            <p className="whitespace-pre-line text-base/8">{project?.try}</p>
+            <p className="text-sm text-center whitespace-pre-line md:text-base">
+              {project?.try}
+            </p>
           </section>
         </section>
       </section>

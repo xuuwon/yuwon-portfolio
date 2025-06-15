@@ -79,19 +79,19 @@ const ScrollRouter = () => {
   return (
     <div>
       <Navbar scrollToSection={scrollToSection} showNav={showNav} />
-      <section ref={mainRef} id="" style={{ height: "100vh" }}>
+      <section ref={mainRef} id="">
         <Main />
       </section>
-      <section ref={aboutMeRef} id="aboutMe" style={{ height: "100vh" }}>
+      <section ref={aboutMeRef} id="aboutMe">
         <AboutMe />
       </section>
-      <section ref={projectRef} id="project" style={{ height: "100vh" }}>
+      <section ref={projectRef} id="project">
         <Projects />
       </section>
       <section ref={experienceRef} id="experience">
         <Experience />
       </section>
-      <section ref={contactRef} id="contact" style={{ height: "100vh" }}>
+      <section ref={contactRef} id="contact">
         <Contact />
       </section>
     </div>
