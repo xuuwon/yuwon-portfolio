@@ -228,6 +228,28 @@ const ProjectDetail = () => {
             </p>
           </section>
         </section>
+
+        <hr className="w-full max-w-[1150px] h-[1px] bg-content dark:bg-content-dark" />
+
+        {project?.blogs && project.blogs.length > 0 && (
+          <section className="flex flex-col items-center gap-4">
+            <p className="text-base md:text-lg">📝 관련 블로그 글 📝</p>
+            <ul className="flex flex-col gap-2 text-sm text-center md:text-base">
+              {project.blogs.map((blog, idx) => (
+                <li key={idx}>
+                  <a
+                    href={blog.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    {blog.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </section>
     </motion.div>
   );
