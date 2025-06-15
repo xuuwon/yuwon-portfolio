@@ -26,7 +26,7 @@ const Projects = () => {
       >
         <section
           className={clsx(
-            "w-full text-lg text-background dark:text-background-dark flex justify-center flex-wrap gap-7",
+            "w-full max-w-[870px] text-lg text-background dark:text-background-dark flex justify-center flex-wrap gap-7",
             isMobile ? "flex-col" : "",
             isTablet ? "" : "mr-28"
           )}
