@@ -58,11 +58,11 @@ const AboutMe = () => {
               </div>
               <p>2001.10.11</p>
               <p>
-                안녕하세요. 사용자 경험을 최우선으로 생각하는 프론트엔드 개발자
-                조유원입니다.
+                안녕하세요. 끊임없는 배움과 도전을 통해 성장하는 프론트엔드
+                개발자 조유원입니다. 🧐
                 <br />
-                개발 역량뿐만 아니라, 서비스 기획 경험을 바탕으로 사용자 중심의
-                서비스를 구현하고 싶습니다.
+                사용자의 입장에서 고민하고, 기획부터 개발까지의 경험을 바탕으로
+                더 나은 서비스를 만들어가고 있습니다.
               </p>
             </div>
           </section>
@@ -96,12 +96,32 @@ const AboutMe = () => {
             <p className="text-xl md:text-2xl">🙋🏻 About Me</p>
             <hr className="w-full h-0.5 bg-content dark:bg-content-dark border-none" />
             <p>
-              서비스 기획과 프론트엔드 개발 경험을 살려 사용자 중심의
-              인터페이스를 만드는 프론트엔드 개발자 조유원입니다. 기획 단계부터
-              개발까지 폭넓은 경험을 쌓으며, 완성도 높은 서비스를 구현하는 데
-              집중하고 있습니다. 앞으로도 지속적으로 배우고 성장하며, 사용자
-              경험을 개선하고 문제를 해결하는 데 기여하는 개발자가 되고자
-              합니다.
+              새로운 시도를 즐기고, 배우는 것뿐 아니라 나누는 것도 좋아합니다.
+              <a href="https://xuwon.tistory.com/" target="_blank">
+                <b className="text-blue-500"> 50편 이상의 블로그</b>
+              </a>
+              를 작성하며 개발 내용을 정리하고 공유해왔습니다. ✍️
+              <br />
+              단순히 주어진 기능을 구현하는 데 그치지 않고{" "}
+              <b className="text-blue-500">더 나은 기능과 인터랙션</b>을
+              탐색합니다. 🔍 <br />
+              또한 실생활의 문제에 주목하여,{" "}
+              <b
+                className="text-blue-500 cursor-pointer"
+                onClick={() => {
+                  document
+                    .getElementById("experience")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                신림동 중장년층의 고립 문제
+              </b>
+              나{" "}
+              <a href="/projects/4">
+                <b className="text-blue-500">청년층의 우울증 문제</b>
+              </a>
+              의 해결을 위한 서비스 아이디어를 직접 기획하고 구현한 경험이
+              있습니다. 💪
             </p>
           </section>
 
