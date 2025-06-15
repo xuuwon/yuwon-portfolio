@@ -51,7 +51,7 @@ const ProjectDetail = () => {
         duration: 1,
       }}
     >
-      <section className="relative w-full max-w-[1150px] mx-auto flex flex-col items-center py-16 px-10  text-content dark:text-content-dark text-xl gap-8">
+      <section className="relative w-full max-w-[1150px] mx-auto flex flex-col items-center py-16 px-10 text-content dark:text-content-dark text-xl gap-8">
         {!isTablet && (
           <button
             className="absolute left-0 flex items-center gap-2 text-base top-16"
@@ -114,7 +114,7 @@ const ProjectDetail = () => {
           ) : (
             <img
               src={project?.image}
-              className="w-[330px] h-auto md:w-[710px] md:h-[400px] rounded-3xl drop-shadow-2xl"
+              className="w-[330px] h-auto md:w-[710px] md:h-[400px] rounded-xl md:rounded-3xl drop-shadow-lg md:drop-shadow-2xl"
               alt={project?.title}
             />
           )}
