@@ -30,6 +30,14 @@ export const projectData: ProjectCardProps[] = [
     title: "마음결 💝 \n- 하루 5분, 마음의 결을 읽다. 💐 ",
     intro: "마음결은 감정을 이해하고 하루의 마무리를 돕는 서비스입니다.",
   },
+  {
+    id: 5,
+    team: "팀",
+    type: "프론트엔드 / 팀원",
+    title: "Clustory 🗺️ \n- 기억과 감정으로 동네를 다시 뛰게 하는 AI 감정 지도",
+    intro:
+      "AI 기반 감정 분석으로 감정 태그와 감성 코스를 제공하는 지도 서비스입니다.",
+  },
 ];
 
 export const projectDetailData: ProjectDetailProps[] = [
@@ -194,6 +202,50 @@ export const projectDetailData: ProjectDetailProps[] = [
       {
         title: "새로고침/뒤로가기 시도 시 모달 띄우기",
         link: "https://xuwon.tistory.com/58",
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Clustory - 기억과 감정으로 동네를 다시 뛰게 하는 AI 감정 지도 🗺️",
+    description:
+      "Clustory는 사용자가 텍스트와 사진으로 감정을 기록하면, AI(Gemini 2.0 Flash)가 자동으로 감정 태그를 생성하고 지도에 시각화해주는 서비스입니다. 감정 기반 맞춤형 코스를 추천하여 새로운 지역 경험을 제공합니다.",
+    github: "https://github.com/ai-emotion-map/emotion-map-FE/",
+    projectLink: "https://emotion-map-nine.vercel.app/",
+    presentation:
+      "https://drive.google.com/file/d/1BN1IlQnz7In6UwUzxpUcDN9cREqLtFyW/view?usp=sharing",
+    image: "/clustory.png",
+    video: "/clustory-video.mp4",
+    team: "프론트엔드 3명 / 백엔드 2명 / 기획 및 디자인 1명",
+    period: "2025.08.04 ~ 2025.08.25 (3주)",
+    keypoint: [
+      "텍스트·사진 업로드 및 위치 지정",
+      "Google Gemini 2.0 Flash 기반 AI 감정 분류",
+      "감정별 태그·이모지로 지도 시각화",
+      "실시간 감성 피드 및 감정 코스 추천",
+    ],
+    technology: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "TailwindCSS",
+      "Axios",
+      "SWR",
+    ],
+    contribution: [
+      "메인 UI 및 지도 관련 API 구현",
+      "서버액션을 통한 네이버맵 검색 API 연동",
+      "UI/UX 기획 및 시연 영상 제작",
+      "Storybook 연동으로 편한 UI 테스트",
+    ],
+    keep: "지도 컴포넌트를 재사용할 수 있게 구조화해 유지보수성을 향상시켰고, SWR을 활용해 클라이언트 데이터 패칭을 최적화했다.",
+    problem:
+      "개발 기간이 짧아 일부 보완 기능(로그인/회원 관리 등)을 충분히 구현하지 못했다.",
+    try: "추후 GPT 모델 기반 맞춤 감정 피드백, 사용자 위치 기반 기능 등 고도화를 계획하고 있다.",
+    blogs: [
+      {
+        title: "Next.js + Storybook 연동 기록",
+        link: "https://xuwon.tistory.com/67",
       },
     ],
   },
