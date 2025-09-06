@@ -2,6 +2,14 @@ import { ExperienceCardProps } from "../type/type";
 
 export const experienceData: ExperienceCardProps[] = [
   {
+    title: "디지털로그 테크놀로지스 - Frontend Engineer 인턴십",
+    type: ["인턴십", "프론트엔드 직무"],
+    period: "2025.08 - 현재",
+    intro:
+      "<b>Next.js와 TypeScript</b>를 활용하여 Figma 시안 기반의 웹 퍼블리싱을 진행했습니다. \n<b>반응형 웹 구현</b>을 통해 다양한 디바이스 환경에서도 최적화된 UI/UX를 제공하며, 곧 <b>홈페이지 제작과 SEO 최적화 작업</b>을 진행할 예정입니다. \n실무 프로젝트에서 컴포넌트 기반 개발과 협업 환경을 경험하며, 프론트엔드 기술 역량과 문제 해결 능력을 함께 향상시키고 있습니다.",
+    image: "/digitallog.jpg",
+  },
+  {
     title: "NHN Service - Test Engineer 인턴십",
     type: ["인턴십", "QA 직무"],
     period: "2024.02 - 2024.08",
