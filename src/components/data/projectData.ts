@@ -209,7 +209,7 @@ export const projectDetailData: ProjectDetailProps[] = [
     id: 5,
     title: "Clustory - 기억과 감정으로 동네를 다시 뛰게 하는 AI 감정 지도 🗺️",
     description:
-      "Clustory는 사용자가 텍스트와 사진으로 감정을 기록하면, AI(Gemini 2.0 Flash)가 자동으로 감정 태그를 생성하고 지도에 시각화해주는 서비스입니다. 감정 기반 맞춤형 코스를 추천하여 새로운 지역 경험을 제공합니다.",
+      "Clustory는 사용자가 텍스트와 사진으로 감정을 기록하면, AI(Gemini 2.0 Flash)가 자동으로 감정 태그를 생성하고 지도에 시각화해주는 서비스입니다. \n감정 기반 맞춤형 코스를 추천하여 새로운 지역 경험을 제공합니다. \n ⚠️현재 서버가 종료되어 있어 서비스 이용이 불가합니다.",
     github: "https://github.com/ai-emotion-map/emotion-map-FE/",
     projectLink: "https://emotion-map-nine.vercel.app/",
     presentation:
