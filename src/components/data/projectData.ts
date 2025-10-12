@@ -234,7 +234,7 @@ export const projectDetailData: ProjectDetailProps[] = [
     ],
     contribution: [
       "메인 UI 및 지도 관련 API 구현",
-      "서버액션을 통한 네이버맵 검색 API 연동",
+      "Next.js API Route를 통한 네이버맵 검색 API 연동",
       "UI/UX 기획 및 시연 영상 제작",
       "Storybook 연동으로 편한 UI 테스트",
     ],

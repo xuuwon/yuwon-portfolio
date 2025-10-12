@@ -6,8 +6,8 @@ export const experienceData: ExperienceCardProps[] = [
     type: ["인턴십", "프론트엔드 직무"],
     period: "2025.08 - 현재",
     intro:
-      "<b>Next.js와 TypeScript</b>를 활용하여 Figma 시안 기반의 웹 퍼블리싱을 진행했습니다. \n<b>반응형 웹 구현</b>을 통해 다양한 디바이스 환경에서도 최적화된 UI/UX를 제공하며, 곧 <b>홈페이지 제작과 SEO 최적화 작업</b>을 진행할 예정입니다. \n실무 프로젝트에서 컴포넌트 기반 개발과 협업 환경을 경험하며, 프론트엔드 기술 역량과 문제 해결 능력을 함께 향상시키고 있습니다.",
-    image: "/digitallog.jpg",
+      "<b>Next.js와 TypeScript</b>를 기반으로 회사 주요 서비스의 프론트엔드 개발과 웹 퍼블리싱을 담당하고 있습니다. <b>TailwindCSS</b>를 활용해 반응형 웹을 구현하여 다양한 디바이스 환경에서도 일관된 UI/UX를 제공하고, <b>API 연동 및 상태 관리</b>를 통해 사용자 행동 데이터를 수집하고 서비스 개선에 활용할 수 있는 환경을 구축했습니다. 현재는 서비스 <b>릴리즈 전 QA 단계에서 테스트 케이스(TC)를 작성</b>하며 품질 검증을 진행 중이고, 별도로 <b>회사 홈페이지 리뉴얼 및 Google Analytics(GA) 연동</b>을 완료해 사용자 데이터 분석 기반을 마련했습니다. 실무 환경에서 컴포넌트 기반 개발과 협업 프로세스를 경험하며, 프론트엔드 기술 역량과 문제 해결 능력을 함께 강화하고 있습니다.",
+    image: "/digitalog.jpg",
   },
   {
     title: "NHN Service - Test Engineer 인턴십",

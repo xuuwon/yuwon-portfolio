@@ -85,7 +85,7 @@ const AboutMe = () => {
                   <p>ADsP</p>
                   <p>SQLD</p>
                   <p>정보처리기사</p>
-                  <p>오픽 IM1</p>
+                  <p>토익스피킹 IH</p>
                 </div>
               </div>
             </div>
@@ -98,7 +98,7 @@ const AboutMe = () => {
             <p>
               새로운 시도를 즐기고, 배우는 것뿐 아니라 나누는 것도 좋아합니다.
               <a href="https://xuwon.tistory.com/" target="_blank">
-                <b className="text-blue-500"> 50편 이상의 블로그</b>
+                <b className="text-blue-500"> 70편 이상의 블로그</b>
               </a>
               를 작성하며 개발 내용을 정리하고 공유해왔습니다. ✍️
               <br />
