@@ -19,13 +19,13 @@ const AboutMe = () => {
       <section
         className={clsx(
           "w-full px-5 py-16 flex",
-          isTablet ? "justify-center" : "justify-end"
+          isTablet ? "justify-center" : "justify-end",
         )}
       >
         <section
           className={clsx(
             "w-full max-w-[870px] text-base md:text-lg text-content dark:text-content-dark flex flex-col gap-10",
-            isTablet ? "" : "mr-28"
+            isTablet ? "" : "mr-28",
           )}
         >
           {/* 인적사항 */}
@@ -72,11 +72,26 @@ const AboutMe = () => {
             <p className="text-xl md:text-2xl">🔎 Profile</p>
             <hr className="w-full h-0.5 bg-content dark:bg-content-dark border-none" />
             <div className="flex flex-col gap-10 md:flex-row">
-              <div className="flex min-w-0 gap-4">
-                <p className="text-lg md:text-xl shrink-0">학력</p>
-                <div>
-                  <p>국민대학교 경영정보학부 재학 (2021.03 -)</p>
-                  <p>국민대학교 인포메이션테크놀로지 융합 전공</p>
+              <div className="flex flex-col min-w-0 gap-4">
+                <div className="flex min-w-0 gap-4">
+                  <p className="text-lg md:text-xl shrink-0">학력</p>
+                  <div>
+                    <p>국민대학교 경영정보학부 졸업 (2021.03 - 2026.02)</p>
+                    <p>국민대학교 인포메이션테크놀로지 융합 전공</p>
+                  </div>
+                </div>
+                <div className="flex min-w-0 gap-4">
+                  <p className="text-lg md:text-xl shrink-0">경력</p>
+                  <div>
+                    <p>
+                      NHN Service Test Engineer Internship (2024.02 - 2024.08)
+                    </p>
+                    <p>
+                      Digitalog Front-end Developer Internship (2025.07 -
+                      2025.11)
+                    </p>
+                    <p>NHN Service Test Engineer (2026.04 - 재직 중)</p>
+                  </div>
                 </div>
               </div>
               <div className="flex min-w-0 gap-4">
@@ -85,7 +100,7 @@ const AboutMe = () => {
                   <p>ADsP</p>
                   <p>SQLD</p>
                   <p>정보처리기사</p>
-                  <p>토익스피킹 IH</p>
+                  <p>TOEIC Speaking IH</p>
                 </div>
               </div>
             </div>
@@ -95,17 +110,14 @@ const AboutMe = () => {
           <section className="flex flex-col gap-4">
             <p className="text-xl md:text-2xl">🙋🏻 About Me</p>
             <hr className="w-full h-0.5 bg-content dark:bg-content-dark border-none" />
-            <p>
-              새로운 시도를 즐기고, 배우는 것뿐 아니라 나누는 것도 좋아합니다.
-              <a href="https://xuwon.tistory.com/" target="_blank">
-                <b className="text-blue-500"> 70편 이상의 블로그</b>
-              </a>
-              를 작성하며 개발 내용을 정리하고 공유해왔습니다. ✍️
+            <p className="text-center">
+              사용자의 문제를 발견하고 이를 서비스로 해결하는 과정에 큰 흥미를
+              느끼는 프론트엔드 개발자입니다. 단순히 요구사항을 구현하는 데
+              그치지 않고 사용자의 행동과 니즈를 이해하며 더 나은 사용자 경험을
+              고민합니다. ✍️
               <br />
-              단순히 주어진 기능을 구현하는 데 그치지 않고{" "}
-              <b className="text-blue-500">더 나은 기능과 인터랙션</b>을
-              탐색합니다. 🔍 <br />
-              또한 실생활의 문제에 주목하여,{" "}
+              기획 단계부터 적극적으로 참여해 문제를 정의하고, 이를 실제
+              서비스로 구현하는 과정에 강점을 가지고 있습니다. 🔍 <br />
               <b
                 className="text-blue-500 cursor-pointer"
                 onClick={() => {
@@ -114,14 +126,16 @@ const AboutMe = () => {
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                신림동 중장년층의 고립 문제
+                프론트엔드 개발 경험과 모바일 게임 QA 경험
               </b>
-              나{" "}
-              <a href="/projects/4">
-                <b className="text-blue-500">청년층의 우울증 문제</b>
-              </a>
-              의 해결을 위한 서비스 아이디어를 직접 기획하고 구현한 경험이
-              있습니다. 💪
+              을 통해 사용자 경험과 서비스 품질을 함께 고려하는 시각을 갖추게
+              되었으며, <br /> 다양한 직군과 협업하며 서비스를 완성해 나가는
+              과정을 중요하게 생각합니다. <br />
+              기술적 완성도뿐만 아니라{" "}
+              <b className="text-blue-500">
+                사용자가 신뢰하고 지속적으로 이용할 수 있는 서비스
+              </b>
+              를 만드는 개발자가 되고자 합니다. 💪
             </p>
           </section>
 
